@@ -20,33 +20,38 @@ else:
 
 print("Bienvenidos a Supermecados Noe")
 bola=randint(1,4)
-totalCompra=int(input("Ingrese el valor de la compra\n"))
 
-if totalCompra>=50000 and bola==1:
-    total=totalCompra-((totalCompra*10)/100)
-    print("!Felicidades, Ganaste un descuento del 10%")
-    print("El valor en total a pagar es de",total)
-    
-elif totalCompra>=50000 and bola==2:
-    total=totalCompra-((totalCompra*30)/100)
-    print("!Felicidades, Ganaste un descuento del 30%")
-    print("El valor en total a pagar es de",total)
+if factura>=50000:
+    print("El usuario puede participar en el sorteo para obtener descuento en su compra")
+    if bola==1:
+        descuento=factura*0.10
+        total=factura-descuento
+        print("!Felicidades, Ganaste un descuento del 10%")
+        print("El valor en total a pagar es de",total)
+        
+    elif bola==2:
+        descuento=factura*0.30
+        total=factura-descuento
+        print("!Felicidades, Ganaste un descuento del 30%")
+        print("El valor en total a pagar es de",total)
 
-elif totalCompra>=50000 and bola==3:
-    total=totalCompra-((totalCompra*50)/100)
-    print("!Felicidades, Ganaste un descuento del 50%")
-    print("El valor en total a pagar es de",total)
+    elif bola==3:
+        descuento=factura*0.50
+        total=factura-descuento
+        print("!Felicidades, Ganaste un descuento del 50%")
+        print("El valor en total a pagar es de",total)
 
-elif totalCompra>=50000 and bola==4:
-    total=totalCompra-((totalCompra*100)/100)
-    print("!Felicidades, Tu compras es totalmente !Gratis¡")
-    print("El valor en total a pagar es de",total)        
+    elif bola==4:
+        print("!Felicidades, Tu compras es totalmente !Gratis¡")
+                
+    else:
+        print(f"El juego escogio {bola}")
 else:
-    print("Lo sentimos, sigue intentando")
+        print("El usuario no puede participar en el beneficio del descuento, el valor a pagar",factura)
 if bola==1 or bola==2 or bola==3:
     valorCancelar=int(input("ingrese en valor con el cual va a cancelar \n"))
     vueltas=valorCancelar-total
-    print=(f"el total de la compra es de {total}\n productos registrados me \n cancela con {valorCancelar}\n su cambio es de {vueltas}")
+    print=(f"el total de la compra es de {total} cancela con {valorCancelar} su cambio es de {vueltas}")
 else:
     bola==4
     print("!Felicidades, Tu compras es totalmente !Gratis¡")
